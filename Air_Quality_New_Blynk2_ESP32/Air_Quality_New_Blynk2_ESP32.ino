@@ -170,14 +170,15 @@ void mySensor()
   Serial.print("Pressure: ");
   Serial.println(pressure);
   Serial.print("CO2: ");
-  if (CO2 >= 0)
-  {
-    Serial.println(CO2);
-  }
-  else
-  {
-    Serial.println("Preheating");
-  }
+  Serial.println(CO2);
+//   if (CO2 >= 0)
+//   {
+//     Serial.println(CO2);
+//   }
+//   else
+//   {
+//     Serial.println("Preheating");
+//   }
   display.clearDisplay(); //Clear display
   display.setCursor(32, 4);
   display.print(F("Air Quality"));
