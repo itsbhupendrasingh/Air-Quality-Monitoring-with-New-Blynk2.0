@@ -205,15 +205,15 @@ void mySensor()
   display.setCursor(60, 70);
   display.print(MQ2_Val);
   display.print(F(" ppm"));
-  if (CO2 >= 0)
-  {
-    display.print(CO2);
-    display.print(F(" ppm"));
-  }
-  else
-  {
-    display.print(F("Preheating"));
-  }
+//   if (CO2 >= 0)
+//   {
+//     display.print(CO2);
+//     display.print(F(" ppm"));
+//   }
+//   else
+//   {
+//     display.print(F("Preheating"));
+//   }
   display.display(); //Output the display text
 }
 
@@ -242,14 +242,15 @@ void recCO2 ()
   float voltage = sensorValue * (3300 / 1023) + 154;
   Serial.print("Voltage: ");
   Serial.println(voltage);
-  if (voltage < 400)
-  {
-    CO2 = -1;
-  }
-  else
-  {
-    CO2 = (voltage - 400) * 50 / 16;
-  }
+  CO2 = (voltage - 400) * 50 / 16;
+//   if (voltage < 400)
+//   {
+//     CO2 = -1;
+//   }
+//   else
+//   {
+//     CO2 = (voltage - 400) * 50 / 16;
+//   }
 }
 
 void mq2_data()
