@@ -171,10 +171,11 @@ void mySensor()
   Serial.println(pressure);
   Serial.print("CO2: ");
   Serial.println(CO2);
-//   if (CO2 >= 0)
-//   {
-//     Serial.println(CO2);
-//   }
+  if (CO2 <= 0)
+  {
+    CO2=0;
+    Serial.println(CO2);
+  }
 //   else
 //   {
 //     Serial.println("Preheating");
@@ -201,6 +202,7 @@ void mySensor()
   display.print(F("CO2: "));
   display.setCursor(60, 54);
   display.print(CO2);
+  display.print(F(" ppm"));
   display.setCursor(15, 70);
   display.print(F("MQ2: "));
   display.setCursor(60, 70);
